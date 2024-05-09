@@ -1,11 +1,24 @@
-import { Text, View } from "react-native";
+import * as React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function Index() {
+import MyTabs from './screens/Mytabs';
+import Test from './screens/Test';
+
+
+
+
+
+
+function index() {
+  const Stack = createNativeStackNavigator();
   return (
-    
-      <View>
-        <Text>StealthComms</Text>
-      </View>
-  
+
+      <Stack.Navigator initialRouteName="Test">
+       
+        <Stack.Screen name="MyTabs" component={MyTabs} />
+        <Stack.Screen name="Test" component={Test} />
+      </Stack.Navigator>
+ 
   );
 }
+export default index;
